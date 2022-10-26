@@ -41,7 +41,7 @@ public class DetailActivity extends AppCompatActivity {
         if (intent.hasExtra("no")){
             turun.setText(intent.getExtras().getString("turun"));
             arti.setText(intent.getExtras().getString("arti"));
-            ayat.setText(intent.getExtras().getString("ayat")+" ayat");
+            ayat.setText(intent.getExtras().getString("ayat") + " ayat");
 
             RequestQueue requestQueue = Volley.newRequestQueue(DetailActivity.this);
             StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://quran-api.santrikoding.com/api/surah/" + intent.getExtras().getString("no"), new Response.Listener<String>() {
@@ -52,7 +52,7 @@ public class DetailActivity extends AppCompatActivity {
                         JSONArray jsonArray = jsonMain.getJSONArray("ayat");
                         for (int i = 0; i < jsonArray.length(); i++) {
                             JSONObject jsonObject = jsonArray.getJSONObject(i);
-                            list.add(new DetailModel(jsonObject.getString("nomor"), jsonObject.getString("ar"), jsonObject.getString("idn"), jsonObject.getString("audio")));
+                            list.add(new DetailModel(jsonObject.getString("nomor"), jsonObject.getString("ar"), jsonObject.getString("idn")));
                         }
                         detailAdapter = new DetailAdapter(getApplicationContext(),R.layout.detail_surat,list);
                         listView.setAdapter(detailAdapter);

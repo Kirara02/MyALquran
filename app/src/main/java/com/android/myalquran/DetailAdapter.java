@@ -35,7 +35,11 @@ public class DetailAdapter extends ArrayAdapter<DetailModel> {
         if(convertView == null){
             convertView = LayoutInflater.from(context).inflate(resource,null,false);
         }
+        TextView nomor = convertView.findViewById(R.id.nomor);
+        TextView arab = convertView.findViewById(R.id.arab);
+        TextView terjemah = convertView.findViewById(R.id.terjemahan);
 
+        DetailModel detailModel = detailModelList.get(position);
         nomor.setText(detailModel.getNomor());
         arab.setText(detailModel.getArab());
         terjemah.setText(detailModel.getTerjemah());

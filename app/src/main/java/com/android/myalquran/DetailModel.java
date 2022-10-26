@@ -1,13 +1,12 @@
 package com.android.myalquran;
 
 public class DetailModel {
-    private String nomor,arab,terjemah,audio;
+    private String nomor,arab,terjemah;
 
-    public DetailModel(String nomor, String arab, String terjemah, String audio) {
+    public DetailModel(String nomor, String arab, String terjemah) {
         this.nomor = nomor;
         this.arab = arab;
         this.terjemah = terjemah;
-        this.audio = audio;
     }
 
     public String getNomor() {
@@ -34,11 +33,4 @@ public class DetailModel {
         this.terjemah = terjemah;
     }
 
-    public String getAudio() {
-        return audio;
-    }
-
-    public void setAudio(String audio) {
-        this.audio = audio;
-    }
 }
